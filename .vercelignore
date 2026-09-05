@@ -1,0 +1,8 @@
+# Never upload private records stored beside the portfolio.
+*
+
+!index.html
+!styles.css
+!script.js
+!Photo_professional.jpg
+!khushi-kanani-resume.pdf

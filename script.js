@@ -9,7 +9,7 @@ const statusText = document.querySelector('.status-text');
 const statusMessages = [
   'building AI-powered solutions',
   'engineering reliable software',
-  'automating real-world workflows',
+  'developing thoughtful digital products',
 ];
 
 if (statusText && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

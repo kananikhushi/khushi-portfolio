@@ -1,0 +1,11 @@
+# This directory also contains private personal records.
+# Ignore everything by default and publish only the portfolio assets below.
+*
+
+!.gitignore
+!README.md
+!index.html
+!styles.css
+!script.js
+!Photo_professional.jpg
+!khushi-kanani-resume.pdf

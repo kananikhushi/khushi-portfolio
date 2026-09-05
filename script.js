@@ -5,6 +5,26 @@ const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
 
 document.body.classList.add('motion-ready');
 
+const statusText = document.querySelector('.status-text');
+const statusMessages = [
+  'building AI-powered solutions',
+  'engineering reliable software',
+  'automating real-world workflows',
+];
+
+if (statusText && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let statusIndex = 0;
+
+  window.setInterval(() => {
+    statusText.classList.add('switching');
+    window.setTimeout(() => {
+      statusIndex = (statusIndex + 1) % statusMessages.length;
+      statusText.textContent = statusMessages[statusIndex];
+      statusText.classList.remove('switching');
+    }, 220);
+  }, 2600);
+}
+
 const setMenu = (open) => {
   menuToggle.setAttribute('aria-expanded', String(open));
   mobileNav.classList.toggle('open', open);

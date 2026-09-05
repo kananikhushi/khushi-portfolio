@@ -14,15 +14,42 @@ const statusMessages = [
 
 if (statusText && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   let statusIndex = 0;
+  let characterIndex = 0;
+  let deleting = false;
 
-  window.setInterval(() => {
-    statusText.classList.add('switching');
-    window.setTimeout(() => {
+  statusText.textContent = '';
+
+  const typeStatus = () => {
+    const message = statusMessages[statusIndex];
+
+    if (!deleting) {
+      characterIndex += 1;
+      statusText.textContent = message.slice(0, characterIndex);
+
+      if (characterIndex === message.length) {
+        deleting = true;
+        window.setTimeout(typeStatus, 1500);
+        return;
+      }
+
+      window.setTimeout(typeStatus, 65);
+      return;
+    }
+
+    characterIndex -= 1;
+    statusText.textContent = message.slice(0, characterIndex);
+
+    if (characterIndex === 0) {
+      deleting = false;
       statusIndex = (statusIndex + 1) % statusMessages.length;
-      statusText.textContent = statusMessages[statusIndex];
-      statusText.classList.remove('switching');
-    }, 220);
-  }, 2600);
+      window.setTimeout(typeStatus, 280);
+      return;
+    }
+
+    window.setTimeout(typeStatus, 35);
+  };
+
+  window.setTimeout(typeStatus, 450);
 }
 
 const setMenu = (open) => {

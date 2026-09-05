@@ -50,9 +50,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
 .network-dots circle:nth-child(3n) { animation-delay: -2.2s; }
 .hero-shell { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(330px,.85fr); gap: 90px; min-height: 650px; align-items: center; padding-top: 60px; }
 .deploy-line { display: flex; min-height: 1.4em; margin: 0 0 22px; align-items: center; color: var(--green); font-family: var(--mono); font-size: .85rem; font-weight: 700; }
-.deploy-line span:first-child { color: var(--cyan); }
-.status-text { display: inline-block; margin-left: .55em; transition: opacity .22s ease, transform .22s ease; }
-.status-text.switching { opacity: 0; transform: translateY(4px); }
+.deploy-line span:first-child, .deploy-line .cursor { color: var(--green); }
+.status-text { display: inline-block; margin-left: .55em; }
 .cursor { color: var(--cyan); animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .hero h1 { margin: 0; color: var(--heading); font-family: var(--mono); font-size: clamp(3.25rem, 5.5vw, 5.4rem); letter-spacing: .055em; line-height: 1; text-shadow: 2px 0 rgba(165,123,207,.18), -2px 0 rgba(237,127,143,.1); }
@@ -156,7 +155,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
 .contact-button { display: inline-flex; min-width: 290px; max-width: 100%; gap: 10px; align-items: center; justify-content: center; padding: 11px 16px; border: 1px solid var(--cyan); border-radius: 4px; color: var(--cyan); font-family: var(--mono); font-size: .69rem; transition: background .18s ease, color .18s ease, transform .18s ease; }
 .contact-button:hover { background: var(--cyan); color: #22172a; transform: translateY(-2px); }
 .social-links { display: flex; justify-content: center; gap: 12px; margin-top: 30px; }.social-links a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 7px; background: var(--card); color: #aaa5af; transition: border-color .18s ease, color .18s ease, transform .18s ease, background .18s ease; }.social-links a:hover { border-color: var(--cyan); background: var(--card-hover); color: var(--cyan); transform: translateY(-3px); }.social-links svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
-.resume-button { margin-top: 16px; }
+.resume-button { min-width: 190px; margin-top: 16px; padding: 9px 14px; font-size: .66rem; }
 .resume-button svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
 footer { display: flex; width: min(calc(100% - 44px), var(--shell)); min-height: 65px; margin-inline: auto; align-items: center; justify-content: space-between; color: #716d77; font-family: var(--mono); font-size: .58rem; } footer p { margin: 0; } footer span, footer a:hover { color: var(--cyan); }
 
